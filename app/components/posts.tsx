@@ -30,11 +30,6 @@ export function BlogPosts() {
                   <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
                     {post.metadata.title}
                   </p>
-                  {post.metadata.author !== "Fiston" && (
-                    <span className="ml-2 px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
-                      Featured
-                    </span>
-                  )}
                 </div>
                 <p className="text-sm text-neutral-600 dark:text-neutral-400">
                   by {post.metadata.author}
