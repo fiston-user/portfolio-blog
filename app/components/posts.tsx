@@ -1,8 +1,8 @@
-import Link from 'next/link'
-import { formatDate, getBlogPosts } from 'app/blog/utils'
+import Link from "next/link";
+import { formatDate, getBlogPosts } from "app/blog/utils";
 
 export function BlogPosts() {
-  let allBlogs = getBlogPosts()
+  let allBlogs = getBlogPosts();
 
   return (
     <div>
@@ -11,9 +11,9 @@ export function BlogPosts() {
           if (
             new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
           ) {
-            return -1
+            return -1;
           }
-          return 1
+          return 1;
         })
         .map((post) => (
           <Link
@@ -26,9 +26,16 @@ export function BlogPosts() {
                 {formatDate(post.metadata.publishedAt, false)}
               </p>
               <div className="flex-1">
-                <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
-                  {post.metadata.title}
-                </p>
+                <div className="flex items-center">
+                  <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
+                    {post.metadata.title}
+                  </p>
+                  {post.metadata.author !== "Fiston" && (
+                    <span className="ml-2 px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
+                      Featured
+                    </span>
+                  )}
+                </div>
                 <p className="text-sm text-neutral-600 dark:text-neutral-400">
                   by {post.metadata.author}
                 </p>
@@ -37,5 +44,5 @@ export function BlogPosts() {
           </Link>
         ))}
     </div>
-  )
+  );
 }
