@@ -1,5 +1,5 @@
 import { BlogPosts } from "app/components/posts";
-
+import { Projects } from "app/components/projects";
 export default function Page() {
   return (
     <section>
@@ -14,6 +14,7 @@ export default function Page() {
       </p>
       <div className="my-8">
         <BlogPosts />
+        <Projects />
       </div>
     </section>
   );
