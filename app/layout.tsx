@@ -12,15 +12,15 @@ import { Newsletter } from "./components/news-letter";
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Fiston",
+    default: "Fiston Turner",
     template: "%s | Fiston",
   },
   description: "This is my portfolio.",
   openGraph: {
-    title: "My Portfolio",
+    title: "Fiston Turner",
     description: "This is my portfolio.",
     url: baseUrl,
-    siteName: "My Portfolio",
+    siteName: "Fiston Turner",
     locale: "en_US",
     type: "website",
   },
